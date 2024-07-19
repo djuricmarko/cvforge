@@ -26,6 +26,7 @@ export default defineConfig({
 
   build: {
     outDir: '../../dist/apps/frontend',
+    emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -33,10 +34,8 @@ export default defineConfig({
   },
 
   test: {
+    watch: false,
     globals: true,
-    cache: {
-      dir: '../../node_modules/.vitest',
-    },
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
 
