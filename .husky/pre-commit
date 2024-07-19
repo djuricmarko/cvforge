@@ -1,0 +1,2 @@
+
+npx lint-staged -- --concurrency 1 --since HEAD --stream
