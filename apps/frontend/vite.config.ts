@@ -1,11 +1,11 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import vue from '@vitejs/plugin-vue';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/apps/client',
+  cacheDir: '../../node_modules/.vite/apps/frontend',
 
   server: {
     port: 4200,
@@ -17,7 +17,7 @@ export default defineConfig({
     host: 'localhost',
   },
 
-  plugins: [react(), nxViteTsPaths()],
+  plugins: [vue(), nxViteTsPaths()],
 
   // Uncomment this if you are using workers.
   // worker: {
@@ -25,7 +25,8 @@ export default defineConfig({
   // },
 
   build: {
-    outDir: '../../dist/apps/client',
+    outDir: '../../dist/apps/frontend',
+    emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -33,16 +34,14 @@ export default defineConfig({
   },
 
   test: {
+    watch: false,
     globals: true,
-    cache: {
-      dir: '../../node_modules/.vitest',
-    },
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/apps/client',
+      reportsDirectory: '../../coverage/apps/frontend',
       provider: 'v8',
     },
   },
