@@ -6,7 +6,9 @@
   "scripts": {
     "dev:api": "nx run api:serve",
     "dev:frontend": "nx run frontend:serve",
-    "build": "nx build api && nx build frontend",
+    "build:frontend": "nx build frontend",
+    "build:api": "nx build api",
+    "build": "npm run build:frontend && npm run build:api",
     "lint": "nx run frontend:lint && nx run api:lint",
     "test": "nx run api:test && nx run frontend:test",
     "prepare": "husky || true",
