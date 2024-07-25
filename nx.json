@@ -16,6 +16,14 @@
       "{workspaceRoot}/.github/workflows/ci.yml"
     ]
   },
+  "targetDefaults": {
+    "build": {
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    }
+  },
   "plugins": [
     {
       "plugin": "@nx/eslint/plugin",
@@ -27,32 +35,12 @@
       "plugin": "@nx/vite/plugin",
       "options": {
         "buildTargetName": "build",
-        "testTargetName": "test",
+        "testTargetName": "vite:test",
         "serveTargetName": "serve",
         "previewTargetName": "preview",
         "serveStaticTargetName": "serve-static"
       }
-    },
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      },
-      "exclude": ["apps/api-e2e/**/*"]
     }
   ],
-  "nxCloudAccessToken": "Yjk1NTcwMjAtOWFmMy00ZmZiLWE3MjEtNGI5M2VmMWYyZDM5fHJlYWQtd3JpdGU=",
-  "targetDefaults": {
-    "@nx/esbuild:esbuild": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    }
-  }
+  "nxCloudAccessToken": "Yjk1NTcwMjAtOWFmMy00ZmZiLWE3MjEtNGI5M2VmMWYyZDM5fHJlYWQtd3JpdGU="
 }

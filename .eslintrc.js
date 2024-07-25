@@ -9,7 +9,7 @@ module.exports = {
     es2021: true
   },
   root: true,
-  ignorePatterns: ['**/*'],
+  ignorePatterns: ['node_modules', 'tmp', 'dist', 'nx'],
   plugins: ['@nx', 'import'],
   extends: ['airbnb-base'],
   overrides: [
