@@ -12,9 +12,23 @@
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s"
     ],
-    "sharedGlobals": [
-      "{workspaceRoot}/.github/workflows/ci.yml"
-    ]
+    "sharedGlobals": []
+  },
+  "targetDefaults": {
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "@nx/vite:test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "@nx/esbuild:esbuild": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
   },
   "plugins": [
     {
@@ -27,32 +41,12 @@
       "plugin": "@nx/vite/plugin",
       "options": {
         "buildTargetName": "build",
-        "testTargetName": "test",
+        "testTargetName": "vite:test",
         "serveTargetName": "serve",
         "previewTargetName": "preview",
         "serveStaticTargetName": "serve-static"
       }
-    },
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      },
-      "exclude": ["apps/api-e2e/**/*"]
     }
   ],
-  "nxCloudAccessToken": "Yjk1NTcwMjAtOWFmMy00ZmZiLWE3MjEtNGI5M2VmMWYyZDM5fHJlYWQtd3JpdGU=",
-  "targetDefaults": {
-    "@nx/esbuild:esbuild": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    }
-  }
+  "nxCloudAccessToken": "NDA2ZTEyNjktZDg1Yi00OGNjLWE1NWQtNDQ1M2M5NWE3ZjU1fHJlYWQtd3JpdGU="
 }
