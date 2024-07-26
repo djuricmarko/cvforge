@@ -51,10 +51,6 @@
           "buildTarget": "server:build:production"
         }
       }
-    },
-    "docker-build": {
-      "dependsOn": ["build"],
-      "command": "docker build -f server/Dockerfile . -t server"
     }
   }
 }

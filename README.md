@@ -1,4 +1,4 @@
-# TestFullstack
+# Cvforge
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
@@ -10,9 +10,27 @@ Enhance your Nx experience by installing [Nx Console](https://nx.dev/nx-console)
 provides an interactive UI to view your projects, run tasks, generate code, and more! Available for VSCode, IntelliJ and
 comes with a LSP for Vim users.
 
-## Build the library
+## Nx plugins and code generators
 
-Run `npx nx build` to build the library. The build artifacts are stored in the output directory (i.e. `dist/`), ready to be published.
+Add Nx plugins to leverage their code generators and automated, inferred tasks.
+
+```
+# Add plugin
+npx nx add @nx/react
+
+# Use code generator
+npx nx generate @nx/react:app demo
+
+# Run development server
+npx nx serve demo
+
+# View project details
+npx nx show project demo --web
+```
+
+Run `npx nx list` to get a list of available plugins and whether they have generators. Then run `npx nx list <plugin-name>` to see what generators are available.
+
+Learn more about [code generators](https://nx.dev/features/generate-code) and [inferred tasks](https://nx.dev/concepts/inferred-tasks) in the docs.
 
 ## Running tasks
 

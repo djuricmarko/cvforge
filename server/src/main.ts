@@ -18,7 +18,6 @@ server.listen({ port, host }, (err) => {
     server.log.error(err);
     process.exit(1);
   } else {
-    // eslint-disable-next-line no-console
     console.log(`[ ready ] http://${host}:${port}`);
   }
 });
