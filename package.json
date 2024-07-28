@@ -7,12 +7,11 @@
   "scripts": {
     "dev:server": "nx run server:serve",
     "dev:client": "nx run client:serve",
-    "build:server": "nx build server",
-    "build:client": "nx build client",
-    "build": "npm run build:client && npm run build:server",
-    "prod:client": "nx run client:serve-static",
-    "prod:server": "nx run server:serve:production",
-    "lint": "nx lint client && nx lint server",
+    "build": "rm -rf dist && nx run-many -t build",
+    "serve:client": "nx run client:serve-static",
+    "serve:server": "nx run server:serve:production",
+    "lint": "nx run-many -t lint",
+    "lint:fix": "nx run-many -t lint --fix",
     "prepare": "husky",
     "pre-commit": "lint-staged"
   },
