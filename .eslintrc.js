@@ -31,19 +31,19 @@ module.exports = {
         ],
         quotes: ['warn', 'single'],
         semi: ['warn', 'always'],
-        'semi-style': ['error', 'last'],
+        'semi-style': ['warn', 'last'],
         'max-len': ['warn', { code: 120, 'ignoreTemplateLiterals': true, 'ignoreStrings': true }],
         indent: ['warn', 2],
         'no-unused-vars': ['error', { ignoreRestSiblings: true }],
         'no-warning-comments': 'off',
-        'no-console': ['error'],
-        'jsx-quotes': ['error', 'prefer-double'],
+        'no-console': ['warn'],
+        'jsx-quotes': ['warn', 'prefer-double'],
         'import/prefer-default-export': 'off',
         'import/no-extraneous-dependencies': 'off',
         'import/no-unresolved': 'off',
         'import/extensions': 'off',
         'import/order': [
-          'error',
+          'warn',
           {
             groups: [
               'builtin',

@@ -12,7 +12,19 @@ module.exports = {
       files: ['*.ts', '*.tsx', '*.js', '*.jsx', '*.vue'],
       extends: ["plugin:tailwindcss/recommended"],
       rules: {
-        'vue/multi-word-component-names': 'off'
+        'vue/multi-word-component-names': 'off',
+        "vue/html-indent": ['warn', 2],
+        "vue/html-quotes": ["warn", "double", { "avoidEscape": true }],
+        "vue/html-self-closing": ["warn", {
+          "html": {
+            "void": "never",
+            "normal": "always",
+            "component": "always"
+          },
+          "svg": "always",
+          "math": "always"
+        }],
+        "tailwindcss/no-custom-classname": "off"
       }
     }
   ]

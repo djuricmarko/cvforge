@@ -1,44 +1,23 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
+import { Button } from '@/components/ui/button';
 </script>
 
 <template>
-  <header>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-    </nav>
-  </header>
-  <RouterView />
+  <div class="mx-auto max-w-7xl antialiased">
+    <header class="flex items-center justify-between py-5">
+      <div class="flex items-center gap-5">
+        <img class="h-8" src="/android-chrome-512x512.png" alt="logo">
+        <RouterLink class="text-xl font-bold" to="/">CV Forge</RouterLink>
+      </div>
+      <nav class="flex items-center gap-5">
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+        <Button>Login/Sign Up</Button>
+      </nav>
+    </header>
+    <main class="h-[calc(100vh-80px)]">
+      <RouterView/>
+    </main>
+  </div>
 </template>
-
-<style scoped lang="css">
-header {
-  line-height: 1.5;
-  max-width: 100vw;
-}
-
-nav > a {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-@media (min-width: 768px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 768px;
-  }
-
-  nav {
-    text-align: left;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
