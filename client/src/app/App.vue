@@ -4,10 +4,9 @@ import { Button } from '@/components/ui/button';
 </script>
 
 <template>
-  <div class="mx-auto max-w-7xl antialiased">
+  <div class="mx-auto max-w-7xl px-5 antialiased">
     <header class="flex items-center justify-between py-5">
       <div class="flex items-center gap-5">
-        <img class="h-8" src="/android-chrome-512x512.png" alt="logo">
         <RouterLink class="text-xl font-bold" to="/">CV Forge</RouterLink>
       </div>
       <nav class="flex items-center gap-5">
